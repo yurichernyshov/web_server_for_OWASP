@@ -1,0 +1,15 @@
+<html>
+
+	<h1>Hello from Flask html!</h1>
+
+	<table border=2>
+		{% for customer in customers %}
+
+		<tr>
+			<td>{{customer[0]}}</td><td>{{customer[1]}}</td>
+		</tr>
+
+		{% endfor %}
+	</table>
+
+</html>

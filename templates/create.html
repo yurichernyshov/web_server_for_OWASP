@@ -1,0 +1,25 @@
+<html>
+
+<form method="post">
+
+<div>
+
+<label for="number">ID</label>
+
+<input type="text" name="number" placeholder="Input NUMBER" value="{{ request.form['number'] }}"></input>
+
+</div>
+
+<div>
+
+<label for="surname">Surname</label>
+<textarea name="surname" placeholder="Input surname">{{ request.form['surname'] }}</textarea>
+</div>
+
+<div> 
+<button type="submit">Submit</button>
+</div>
+
+</form>
+
+</html>

